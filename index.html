@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FFFFFF">
+    <title>NEXT SEASON | مجلة إلكترونية فنية وثقافية</title>
+    <meta name="description" content="NEXT SEASON مجلة إلكترونية تابعة لمجموعة المتحدة بلس، تهتم بالمحتوى الفني والثقافي وتسلط الضوء على الفنانين والمشاهير مع اهتمام خاص بالمشهد الفني الليبي.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== الوضع النهاري (Light) — افتراضي ===== */
+        :root,
+        html[data-theme="light"] {
+            --primary-red: #E10600;
+            --dark-red: #B80000;
+            --black: #0A0A0A;
+            --soft-black: #1A1A1A;
+
+            --surface-main: #FFFFFF;
+            --surface-soft: #F7F7F7;
+            --surface-red: rgba(225, 6, 0, 0.06);
+            --surface-elevated: #FFFFFF;
+
+            --heading-color: #0A0A0A;
+            --body-color: #4A4A4A;
+            --muted-color: #888888;
+            --border-color: #E5E5E5;
+
+            --button-primary: #E10600;
+            --button-hover: #B80000;
+
+            --red-gradient: linear-gradient(135deg, #E10600, #B80000);
+            --dark-gradient: linear-gradient(135deg, #000000, #0B0B0B);
+
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-red: 0 8px 32px rgba(225, 6, 0, 0.25);
+
+            --hero-overlay-from: rgba(0, 0, 0, 0.75);
+            --hero-overlay-mid: rgba(10, 10, 10, 0.65);
+            --hero-overlay-to: rgba(225, 6, 0, 0.2);
+        }
+
+        /* ===== الوضع الليلي (Dark) ===== */
+        html[data-theme="dark"] {
+            --primary-red: #FB0000;
+            --dark-red: #B80000;
+            --black: #000000;
+            --soft-black: #0B0B0B;
+
+            --surface-main: #111111;
+            --surface-soft: #0B0B0B;
+            --surface-red: rgba(251, 0, 0, 0.08);
+            --surface-elevated: #161616;
+
+            --heading-color: #FFFFFF;
+            --body-color: #B0B0B0;
+            --muted-color: #707070;
+            --border-color: #2A2A2A;
+
+            --button-primary: #FB0000;
+            --button-hover: #B80000;
+
+            --red-gradient: linear-gradient(135deg, #FB0000, #B80000);
+            --dark-gradient: linear-gradient(135deg, #000000, #0B0B0B);
+
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.8);
+            --shadow-red: 0 8px 32px rgba(251, 0, 0, 0.4);
+
+            --hero-overlay-from: rgba(0, 0, 0, 0.95);
+            --hero-overlay-mid: rgba(11, 11, 11, 0.85);
+            --hero-overlay-to: rgba(251, 0, 0, 0.25);
+        }
+
+        :root {
+            --radius: 20px;
+            --radius-sm: 12px;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Cairo', sans-serif;
+            --font-display: 'Space Grotesk', 'Cairo', sans-serif;
+            --header-h: 72px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--surface-soft);
+            color: var(--body-color);
+            line-height: 1.75;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; transition: var(--transition); }
+
+        h1, h2, h3, h4 { color: var(--heading-color); font-weight: 800; line-height: 1.3; transition: color 0.4s ease; }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== Icons ===== */
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .icon-sm { width: 16px; height: 16px; }
+        .icon-lg { width: 32px; height: 32px; }
+
+        /* ===== Header ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--header-h);
+            background: rgba(255, 255, 255, 0.85);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition), background-color 0.4s ease;
+        }
+
+        html[data-theme="dark"] .header {
+            background: rgba(11, 11, 11, 0.9);
+        }
+
+        .header.scrolled {
+            height: 64px;
+            background: var(--surface-main);
+            box-shadow: var(--shadow-sm);
+        }
+
+        html[data-theme="dark"] .header.scrolled {
+            background: rgba(11, 11, 11, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            gap: 12px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            min-width: 0;
+        }
+
+        .logo-img { height: 44px; width: auto; object-fit: contain; border-radius: 8px; }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            background: var(--red-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-weight: 900;
+            box-shadow: var(--shadow-red);
+            flex-shrink: 0;
+            font-family: var(--font-display);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            min-width: 0;
+        }
+
+        .logo-text .main {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--heading-color);
+            letter-spacing: -0.3px;
+            transition: color 0.4s ease;
+        }
+
+        .logo-text .main .red { color: var(--primary-red); }
+
+        .logo-text .sub {
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: var(--muted-color);
+            letter-spacing: 0.5px;
+        }
+
+        .nav { display: none; }
+        .nav ul { display: flex; gap: 2px; }
+
+        .nav a {
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--body-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .nav a:hover { background: var(--surface-red); color: var(--primary-red); }
+
+        .nav a.active {
+            background: var(--red-gradient);
+            color: #FFFFFF;
+            box-shadow: var(--shadow-red);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 26px;
+            font-family: var(--font);
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .btn-sm { padding: 9px 20px; font-size: 0.82rem; }
+
+        .btn-primary {
+            background: var(--red-gradient);
+            color: #FFFFFF;
+            box-shadow: var(--shadow-red);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(225, 6, 0, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--heading-color);
+            border-color: var(--heading-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--heading-color);
+            color: var(--surface-main);
+            transform: translateY(-2px);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: var(--surface-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--heading-color);
+            transition: var(--transition);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface-red);
+            color: var(--primary-red);
+            border-color: var(--primary-red);
+        }
+
+        .theme-toggle .icon {
+            transition: transform 0.4s ease, opacity 0.3s ease;
+        }
+
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+
+        html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+        html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface-soft);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .hamburger span {
+            width: 20px;
+            height: 2px;
+            background: var(--heading-color);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--primary-red); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--primary-red); }
+
+        /* ===== Mobile Menu ===== */
+        .mobile-menu {
+            position: fixed;
+            top: var(--header-h);
+            left: 0;
+            right: 0;
+            background: var(--surface-main);
+            box-shadow: var(--shadow-lg);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            z-index: 999;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-menu.active { max-height: 500px; overflow-y: auto; }
+
+        .mobile-menu a {
+            display: flex;
+            align-items: center;
+            padding: 15px 24px;
+            font-weight: 600;
+            color: var(--body-color);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a:active { background: var(--surface-red); color: var(--primary-red); }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--header-h) + 60px) 0 80px;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            animation: slowZoom 30s ease-in-out infinite alternate;
+            opacity: 0.5;
+        }
+
+        html[data-theme="light"] .hero-bg {
+            opacity: 0.65;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--hero-overlay-from) 0%, var(--hero-overlay-mid) 50%, var(--hero-overlay-to) 100%);
+            z-index: 1;
+            transition: background 0.4s ease;
+        }
+
+        .hero-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            color: #FFFFFF;
+            padding: 0 8px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #FFFFFF;
+        }
+
+        .hero-badge .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--primary-red);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            flex-shrink: 0;
+            box-shadow: 0 0 12px var(--primary-red);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 .highlight {
+            background: var(--red-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .hero .btn-outline {
+            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .hero .btn-outline:hover {
+            background: #FFFFFF;
+            color: #0A0A0A;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 56px;
+            padding-top: 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stat h3 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            margin-bottom: 4px;
+            color: var(--primary-red);
+            font-family: var(--font-display);
+            text-shadow: 0 0 20px rgba(251, 0, 0, 0.4);
+        }
+
+        .hero-stat p {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            margin: 0;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* ===== Sections ===== */
+        .section { padding: 80px 0; position: relative; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            padding: 6px 18px;
+            background: var(--surface-red);
+            border-radius: 50px;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--heading-color);
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--body-color);
+            max-width: 650px;
+            margin: 12px auto 0;
+        }
+
+        /* ===== Categories ===== */
+        .categories-section { background: var(--surface-soft); }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .category-card {
+            background: var(--surface-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 3px;
+            background: var(--red-gradient);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-red);
+        }
+
+        .category-card:hover::before { transform: scaleX(1); }
+
+        .category-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--border-color);
+            line-height: 1;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            letter-spacing: -2px;
+        }
+
+        .category-card:hover .category-number {
+            color: var(--primary-red);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--surface-red);
+            border: 1px solid rgba(251, 0, 0, 0.2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-icon {
+            background: var(--red-gradient);
+            color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .category-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--heading-color);
+        }
+
+        .category-card > p {
+            font-size: 0.9rem;
+            color: var(--body-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .category-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-link {
+            gap: 14px;
+        }
+
+        /* ===== About ===== */
+        .about-section { background: var(--surface-main); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-visual {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--dark-gradient);
+            padding: 36px 28px;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(251, 0, 0, 0.3);
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2074&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            mix-blend-mode: overlay;
+        }
+
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(251, 0, 0, 0.15) 100%);
+        }
+
+        .about-visual-content {
+            position: relative;
+            z-index: 2;
+            color: #FFFFFF;
+        }
+
+        .about-visual-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #FFFFFF;
+        }
+
+        .about-visual h3 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            color: #FFFFFF;
+        }
+
+        .about-visual p {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-visual-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 22px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-visual-stat {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #FFFFFF;
+        }
+
+        .about-visual-stat h4 {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+            font-family: var(--font-display);
+        }
+
+        .about-visual-stat p {
+            font-size: 0.72rem;
+            opacity: 0.9;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .about-content h2 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .about-content h2 .red { color: var(--primary-red); }
+
+        .about-content > p {
+            color: var(--body-color);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.9;
+        }
+
+        .vision-card {
+            background: var(--surface-soft);
+            border-right: 4px solid var(--primary-red);
+            border-radius: var(--radius-sm);
+            padding: 20px 22px;
+            margin-top: 20px;
+        }
+
+        .vision-card h4 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vision-card p {
+            font-size: 0.88rem;
+            color: var(--body-color);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* ===== Contact ===== */
+        .contact-section {
+            background: var(--surface-soft);
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--surface-red) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--surface-red) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--surface-main);
+            border: 1px solid var(--border-color);
+            padding: 28px 26px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-red);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--surface-red);
+            border: 1px solid rgba(251, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--red-gradient);
+            color: #FFFFFF;
+        }
+
+        .contact-item h4 {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--heading-color);
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-red);
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: var(--dark-gradient);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(251, 0, 0, 0.15) 100%);
+        }
+
+        .cta .container { position: relative; z-index: 2; }
+
+        .cta h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 14px;
+            line-height: 1.3;
+            color: #FFFFFF;
+        }
+
+        .cta p {
+            opacity: 0.95;
+            margin-bottom: 32px;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .cta .btn-primary {
+            background: #FFFFFF;
+            color: var(--primary-red);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--surface-soft);
+        }
+
+        .cta .btn-outline {
+            color: #FFFFFF;
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .cta .btn-outline:hover {
+            background: #FFFFFF;
+            color: #0A0A0A;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--black);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        html[data-theme="light"] .footer {
+            background: #0A0A0A;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand .logo { color: #FFFFFF; margin-bottom: 16px; }
+        .footer-brand .logo-text .main { color: #FFFFFF; }
+        .footer-brand .logo-text .sub { color: rgba(255, 255, 255, 0.5); }
+        .footer-brand .logo-img { height: 52px; }
+
+        .footer-brand p {
+            font-size: 0.88rem;
+            line-height: 1.9;
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-cr {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+            background: rgba(251, 0, 0, 0.12);
+            border: 1px solid rgba(251, 0, 0, 0.3);
+            border-radius: 50px;
+            font-size: 0.72rem;
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .footer h4 {
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--red-gradient);
+            border-radius: 2px;
+        }
+
+        .footer ul { display: flex; flex-direction: column; gap: 10px; }
+
+        .footer a {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.65);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer a:hover { color: var(--primary-red); padding-right: 6px; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 22px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .footer-bottom .credit {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        /* ===== Floating Buttons ===== */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 900;
+        }
+
+        .floating-btn {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .floating-btn:hover { transform: scale(1.1) rotate(5deg); }
+
+        .floating-btn::after {
+            content: attr(data-label);
+            position: absolute;
+            right: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%) translateX(8px);
+            background: var(--black);
+            color: #FFFFFF;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .floating-btn:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+        .whatsapp-btn {
+            background: var(--red-gradient);
+            color: #FFFFFF;
+        }
+
+        .call-btn {
+            background: var(--surface-main);
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        /* ===== Reveal ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width: 380px) {
+            .logo-img { height: 36px; }
+            .logo-mark { width: 36px; height: 36px; font-size: 1rem; }
+            .logo-text .main { font-size: 0.95rem; }
+            .logo-text .sub { font-size: 0.5rem; }
+            .hamburger { width: 36px; height: 36px; }
+            .theme-toggle { width: 36px; height: 36px; }
+            .btn-sm { padding: 7px 14px; font-size: 0.75rem; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero-badge { font-size: 0.7rem; padding: 6px 14px; }
+        }
+
+        @media (min-width: 640px) {
+            .container { padding: 0 24px; }
+            .section { padding: 90px 0; }
+            .section-title { font-size: 2rem; }
+            .section-header { margin-bottom: 60px; }
+            .hero h1 { font-size: 2.9rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-stat h3 { font-size: 2.2rem; }
+            .hero-stat p { font-size: 0.85rem; }
+            .categories-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+            .about-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
+            .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 44px; }
+            .category-card { padding: 44px 34px; }
+            .about-visual { padding: 36px 30px; }
+            .logo-img { height: 48px; }
+            .cta h2 { font-size: 2.2rem; }
+        }
+
+        @media (min-width: 900px) {
+            :root { --header-h: 76px; }
+            .nav { display: block; }
+            .hamburger { display: none; }
+            .mobile-menu { display: none; }
+            .container { padding: 0 36px; }
+            .section { padding: 100px 0; }
+            .section-title { font-size: 2.3rem; }
+            .section-header { margin-bottom: 70px; }
+            .hero h1 { font-size: 3.6rem; }
+            .hero p { font-size: 1.12rem; }
+            .hero-badge { font-size: 0.85rem; padding: 10px 24px; }
+            .hero-stat h3 { font-size: 2.4rem; }
+            .hero-stat p { font-size: 0.88rem; }
+            .hero-stats { gap: 28px; margin-top: 64px; padding-top: 44px; }
+            .logo-img { height: 52px; }
+            .logo-mark { width: 48px; height: 48px; font-size: 1.4rem; }
+            .logo-text .main { font-size: 1.25rem; }
+            .logo-text .sub { font-size: 0.6rem; }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+            .about-content h2 { font-size: 2rem; }
+            .cta h2 { font-size: 2.4rem; }
+            .cta p { font-size: 1.08rem; }
+            .cta { padding: 100px 20px; }
+            .about-grid { gap: 60px; }
+            .about-visual { min-height: 380px; padding: 44px; }
+            .about-visual h3 { font-size: 1.6rem; }
+            .about-visual p { font-size: 0.95rem; }
+            .category-card { padding: 50px 40px; }
+            .category-card h3 { font-size: 1.5rem; }
+            .category-number { font-size: 4rem; }
+            .contact-item { padding: 36px 32px; }
+            .contact-icon { width: 72px; height: 72px; }
+            .footer { padding: 80px 0 0; }
+            .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 60px; padding-bottom: 50px; }
+            .footer h4 { font-size: 1.05rem; }
+            .footer a { font-size: 0.92rem; }
+            .footer-brand .logo-img { height: 60px; }
+            .floating-buttons { bottom: 28px; left: 28px; gap: 14px; }
+            .floating-btn { width: 58px; height: 58px; }
+            .section-subtitle { font-size: 1.05rem; }
+        }
+
+        @media (min-width: 1100px) {
+            .categories-grid { grid-template-columns: repeat(4, 1fr); }
+            .hero h1 { font-size: 4.1rem; }
+            .contact-grid { max-width: 900px; }
+        }
+
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .floating-buttons {
+                bottom: calc(20px + env(safe-area-inset-bottom));
+                left: calc(20px + env(safe-area-inset-left));
+            }
+            .footer-bottom {
+                padding-bottom: calc(22px + env(safe-area-inset-bottom));
+            }
+        }
+
+        html, body { max-width: 100%; }
+        .hero, .section, .cta, .footer { overflow-x: hidden; }
+
+        /* Smooth theme transition */
+        * {
+            transition-property: background-color, border-color, color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+
+        .reveal, .theme-toggle .icon, .hamburger span, .category-card::before, .category-card:hover .category-number, .category-card:hover .category-icon {
+            transition: var(--transition);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#home" class="logo" id="logoContainer" aria-label="NEXT SEASON"></a>
+            <nav class="nav" id="mainNav" aria-label="التنقل الرئيسي">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#categories">الأقسام</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي/النهاري" title="تبديل الوضع">
+                    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm">تواصل معنا</a>
+                <button class="hamburger" id="hamburger" aria-label="القائمة" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="قائمة الجوال">
+        <a href="#home">الرئيسية</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل معنا</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">
+                <span class="dot"></span>
+                مجلة المتحدة بلس · Since 2026
+            </span>
+            <h1>NEXT SEASON<br><span class="highlight">مجلة إلكترونية فنية وثقافية</span></h1>
+            <p>مجلة إلكترونية تابعة لمجموعة المتحدة بلس، تهتم بالمحتوى الفني والثقافي، وتسلط الضوء على الفنانين والمشاهير، مع اهتمام خاص بالمشهد الفني الليبي.</p>
+            <div class="hero-buttons">
+                <a href="#categories" class="btn btn-primary">استكشف الأقسام</a>
+                <a href="#about" class="btn btn-outline">تعرف علينا</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>4</h3>
+                    <p>أقسام متنوعة</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>+100</h3>
+                    <p>موضوع فني وثقافي</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>24/7</h3>
+                    <p>تغطية مستمرة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section categories-section" id="categories">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">أقسام المجلة</span>
+                <h2 class="section-title">محتوى فني وثقافي متنوع</h2>
+                <p class="section-subtitle">تغطية شاملة لأبرز الأخبار والموضوعات الفنية والثقافية والاجتماعية</p>
+            </div>
+            <div class="categories-grid">
+
+                <article class="category-card reveal">
+                    <div class="category-number">01</div>
+                    <div class="category-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>أخبار</h3>
+                    <p>متابعة أبرز الأخبار والمستجدات الفنية محلياً وعربياً ودولياً، مع التركيز على أخبار الفنانين الليبيين والمشاهير وأعمالهم ونشاطاتهم.</p>
+                    <a href="#" class="category-link">
+                        استكشف
+                        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    </a>
+                </article>
+
+                <article class="category-card reveal delay-1">
+                    <div class="category-number">02</div>
+                    <div class="category-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>مجتمع</h3>
+                    <p>تناول الموضوعات الاجتماعية المرتبطة بالفنانين والمشاهير، ورصد حضورهم في المجتمع ومبادراتهم ومشاركاتهم، إلى جانب القضايا الاجتماعية.</p>
+                    <a href="#" class="category-link">
+                        استكشف
+                        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    </a>
+                </article>
+
+                <article class="category-card reveal delay-2">
+                    <div class="category-number">03</div>
+                    <div class="category-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3>ثقافة وفنون</h3>
+                    <p>مساحة للاهتمام بالفنون والثقافة والأدب والسينما والمسرح والموسيقى، والتعريف بالأعمال الفنية والتجارب الإبداعية في ليبيا وخارجها.</p>
+                    <a href="#" class="category-link">
+                        استكشف
+                        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    </a>
+                </article>
+
+                <article class="category-card reveal delay-3">
+                    <div class="category-number">04</div>
+                    <div class="category-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>شخصيات ولقاءات</h3>
+                    <p>لقاءات وحوارات مع الفنانين والشخصيات الليبية، للتعرف على مسيرتهم الفنية وتجاربهم وأفكارهم، والاقتراب من جوانب مختلفة من حياتهم.</p>
+                    <a href="#" class="category-link">
+                        استكشف
+                        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual reveal">
+                    <div class="about-visual-content">
+                        <span class="about-visual-badge">
+                            <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/></svg>
+                            من نحن
+                        </span>
+                        <h3>مجلة <span style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); text-underline-offset: 6px;">NEXT SEASON</span><br>صوت المشهد الفني</h3>
+                        <p>مجلة إلكترونية تابعة لمجموعة المتحدة بلس للخدمات الإعلامية، متخصصة في تقديم محتوى فني وثقافي متنوع.</p>
+                    </div>
+                    <div class="about-visual-stats">
+                        <div class="about-visual-stat">
+                            <h4>4</h4>
+                            <p>أقسام رئيسية</p>
+                        </div>
+                        <div class="about-visual-stat">
+                            <h4>2026</h4>
+                            <p>سنة التأسيس</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content reveal delay-1">
+                    <span class="section-label">من نحن</span>
+                    <h2>مجلة <span class="red">NEXT SEASON</span> — صوت المشهد الفني</h2>
+                    <p>NEXT SEASON مجلة إلكترونية تابعة لمجموعة المتحدة بلس للخدمات الإعلامية، متخصصة في تقديم محتوى فني وثقافي متنوع، مع اهتمام بالمشهد الفني الليبي والعربي، وتسليط الضوء على الفنانين والمشاهير وأعمالهم وتجاربهم.</p>
+                    <div class="vision-card">
+                        <h4>
+                            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            رؤيتنا
+                        </h4>
+                        <p>تسعى المجلة إلى تقديم محتوى إعلامي مختار يجمع بين الأخبار والحوارات والموضوعات الثقافية والاجتماعية، ويوفر مساحة للتعريف بالمواهب والتجارب الفنية ومتابعة أبرز المستجدات في هذا المجال.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container reveal">
+            <h2>اكتشف عالم NEXT SEASON</h2>
+            <p>تابعنا للحصول على آخر الأخبار الفنية والثقافية، ولقاءات حصرية مع أبرز الفنانين والمشاهير.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/218920010505" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.53 3.66 1.44 5.18L2 22l4.99-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.58-1.24l-.33-.19-2.96-.78.31.31A7.98 7.98 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    تواصل عبر واتساب
+                </a>
+                <a href="tel:+218920010505" class="btn btn-outline">
+                    <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    اتصل بنا
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">تواصل معنا</span>
+                <h2 class="section-title">نحن هنا للاستماع إليك</h2>
+                <p class="section-subtitle">للتواصل مع فريق المجلة أو لإرسال أخباركم ومقترحاتكم</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item reveal">
+                    <div class="contact-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.53 3.66 1.44 5.18L2 22l4.99-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.58-1.24l-.33-.19-2.96-.78.31.31A7.98 7.98 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    </div>
+                    <div>
+                        <h4>واتساب</h4>
+                        <a href="https://wa.me/218920010505" target="_blank" rel="noopener">0920010505</a>
+                    </div>
+                </div>
+                <div class="contact-item reveal delay-1">
+                    <div class="contact-icon">
+                        <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <h4>الهاتف</h4>
+                        <a href="tel:+218920010505">0920010505</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" id="logoFooter"></div>
+                    <p>NEXT SEASON مجلة إلكترونية تابعة لمجموعة المتحدة بلس للخدمات الإعلامية، متخصصة في تقديم محتوى فني وثقافي متنوع، مع اهتمام بالمشهد الفني الليبي والعربي.</p>
+                    <span class="footer-cr">Since 2026 · إحدى شركات المتحدة بلس</span>
+                </div>
+                <div>
+                    <h4>الأقسام</h4>
+                    <ul>
+                        <li><a href="#categories">أخبار</a></li>
+                        <li><a href="#categories">مجتمع</a></li>
+                        <li><a href="#categories">ثقافة وفنون</a></li>
+                        <li><a href="#categories">شخصيات ولقاءات</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصل معنا</h4>
+                    <ul>
+                        <li><a href="https://wa.me/218920010505" target="_blank" rel="noopener">
+                            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.53 3.66 1.44 5.18L2 22l4.99-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.58-1.24l-.33-.19-2.96-.78.31.31A7.98 7.98 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
+                            واتساب: 0920010505
+                        </a></li>
+                        <li><a href="tel:+218920010505">
+                            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            هاتف: 0920010505
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 <span class="credit">NEXT SEASON</span> — إحدى شركات المتحدة بلس. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/218920010505" target="_blank" rel="noopener" class="floating-btn whatsapp-btn" data-label="واتساب" aria-label="واتساب">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.53 3.66 1.44 5.18L2 22l4.99-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.58-1.24l-.33-.19-2.96-.78.31.31A7.98 7.98 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.5-5.5c-.25-.12-1.47-.72-1.69-.8-.22-.08-.38-.12-.54.12-.16.25-.62.8-.76.97-.14.16-.28.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.54-1.3-.74-1.79-.2-.47-.4-.4-.54-.4-.14-.01-.31-.01-.47-.01-.16 0-.43.06-.65.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.51.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+        </a>
+        <a href="tel:+218920010505" class="floating-btn call-btn" data-label="اتصل بنا" aria-label="اتصال">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+    </div>
+
+    <script>
+        // ============================================
+        // ⭐ الشعار — lo.png
+        // ============================================
+        const LOGO_URL = "lo.png";
+        const COMPANY_NAME = "NEXT SEASON";
+        const COMPANY_SUB = "MAGAZINE";
+        // ============================================
+
+        function renderLogo() {
+            const fallback = `<span class="logo-mark" ${LOGO_URL ? 'style="display:none"' : ''}>N</span>
+                <span class="logo-text">
+                    <span class="main">NEXT<span class="red">SEASON</span></span>
+                    <span class="sub">${COMPANY_SUB}</span>
+                </span>`;
+
+            const html = LOGO_URL
+                ? `<img src="${LOGO_URL}" alt="${COMPANY_NAME}" class="logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">${fallback}`
+                : fallback;
+
+            document.getElementById('logoContainer').innerHTML = html;
+            document.getElementById('logoFooter').innerHTML = html;
+        }
+        renderLogo();
+
+        // ===== Theme Toggle (Light Default) =====
+        const htmlEl = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+
+        // ابدأ دائمًا بالوضع النهاري — تجاهل localStorage عند الفتح
+        const savedTheme = localStorage.getItem('ns_theme');
+        const initialTheme = 'light'; // الوضع النهاري دائمًا عند الفتح
+        htmlEl.setAttribute('data-theme', initialTheme);
+
+        // تحديث meta theme-color
+        function updateMetaTheme(theme) {
+            const meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) {
+                meta.setAttribute('content', theme === 'dark' ? '#000000' : '#FFFFFF');
+            }
+        }
+        updateMetaTheme(initialTheme);
+
+        // تبديل الوضع عند الضغط
+        themeToggle.addEventListener('click', () => {
+            const current = htmlEl.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            htmlEl.setAttribute('data-theme', next);
+            localStorage.setItem('ns_theme', next);
+            updateMetaTheme(next);
+        });
+
+        // Header scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        // Mobile menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 900) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 85;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Active nav on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 130) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
